@@ -200,16 +200,16 @@ func MakeRaw(fd uintptr) (*State, error) {
 	// -- https://msdn.microsoft.com/en-us/library/windows/desktop/ms683462(v=vs.85).aspx
 
 	// Disable these modes
-	mode &^= winterm.ENABLE_ECHO_INPUT
+	// mode &^= winterm.ENABLE_ECHO_INPUT
 	mode &^= winterm.ENABLE_LINE_INPUT
 	mode &^= winterm.ENABLE_MOUSE_INPUT
 	mode &^= winterm.ENABLE_WINDOW_INPUT
-	mode &^= winterm.ENABLE_PROCESSED_INPUT
+	//mode &^= winterm.ENABLE_PROCESSED_INPUT
 
 	// Enable these modes
-	mode |= winterm.ENABLE_EXTENDED_FLAGS
-	mode |= winterm.ENABLE_INSERT_MODE
-	mode |= winterm.ENABLE_QUICK_EDIT_MODE
+	//mode |= winterm.ENABLE_EXTENDED_FLAGS
+	//mode |= winterm.ENABLE_INSERT_MODE
+	//mode |= winterm.ENABLE_QUICK_EDIT_MODE
 	if vtInputSupported {
 		mode |= enableVirtualTerminalInput
 	}
