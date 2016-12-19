@@ -8,10 +8,9 @@ import (
 	"runtime"
 	"time"
 
+	"github.com/docker/docker/pkg/signal"
 	"github.com/fsouza/go-dockerclient"
 	"github.com/processone/go-dockerpty/term"
-
-	"github.com/docker/docker/pkg/signal"
 )
 
 func Start(client *docker.Client, container *docker.Container, hostConfig *docker.HostConfig) (err error) {
